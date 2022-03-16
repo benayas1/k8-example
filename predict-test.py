@@ -1,5 +1,3 @@
-from time import time
-from pyrsistent import T
 import requests
 import fire
 import time
@@ -28,7 +26,7 @@ def main(n=1,
     print('The Model Prediction for placement :',result)
   duration = time.time() - t
   avg = duration / n
-  print("Number of calls {n}. Average latency {avg}")
+  print(f"Number of calls {n}. Average latency {avg}")
 
 if __name__ == '__main__':
     fire.Fire(main)
