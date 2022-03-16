@@ -11,7 +11,7 @@
  cd k8-example
  python3 -m venv env
  source env/bin/activate
- pip install -r requirements.txt
+ pip3 install -r requirements.txt
  ```
  
  Run the provided training script
