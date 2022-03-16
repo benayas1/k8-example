@@ -8,6 +8,7 @@
  
  Create a virtual environmente, install requirements
  ```
+ cd k8-example
  python3 -m venv /venv
  source env/bin/activate
  pip install -r requirements
