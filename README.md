@@ -48,7 +48,7 @@ The above commands create a Kubernetes cluster in autopilot modality. This means
 The same can be obtained by using the GCP console.
 
 
-## Create deployment files
+## Deploy service
 This files specify the deployment parameters (such as the image to deploy) and the service that is create (where do you expose your Flask app)
 
 First, let's update the deployment.yaml file with the correct image
@@ -56,17 +56,37 @@ First, let's update the deployment.yaml file with the correct image
 python3 update.py "k8-test:v1" kube_config/deployment.yaml
 ```
 
-Calling kubectl we load the configuration into the cluster
+Calling kubectl we load the configuration into the cluster, and deploy the files.
 ```
 kubectl create --filename kube_config/deployment.yaml
 kubectl create --filename kube_config/service.yaml
 ```
 
-## Create deployment files
+## Run Test
+A production test, making 100 calls
+```
+python3 predict.py <endpoint> 100
+```
 
-
+Making a call from curl
+```
+curl -d '{"gender": "M",
+          "ssc_p": 71.0,
+          "ssc_b": "Central",
+          "hsc_p": 58.66,
+          "hsc_b": "Central",
+          "hsc_s": "Science",
+          "degree_p": 58.0,
+          "degree_t": "Sci&Tech",
+          "etest_p": 56.0,
+          "mba_p": 61.3,
+          "specialisation": "Mkt&Fin",
+          "workex": "Yes"
+          }' -H 'Content-Type: application/json' 
+  http://<endpoint>/predict
+```
  
  
-Open cloud shell editor
-```cloudshell workspace microservices-demo```
+To see what is going on from the online editor in GCP
+```cloudshell workspace .```
 
