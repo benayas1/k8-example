@@ -2,7 +2,7 @@
  Example of model deployment in Kubernetes
  
  ## Clone this repo in GCP Cloud Console
- ```git clone https://github.com/GoogleCloudPlatform/microservices-demo.git```
+ ```git clone https://github.com/benayas1/k8-example.git```
  
  ## Train a model and save the trained model
  
