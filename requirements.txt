@@ -3,3 +3,4 @@ sklearn
 ruamel.yaml
 flask
 gunicorn
+fire
