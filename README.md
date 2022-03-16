@@ -30,6 +30,15 @@
  ```
  At this point, we have an image that contains a predict script and a trained model. This image will be deployed into a Kubernetes cluster.
 
+Now lets do a quick test to check that our prediction service works. Let's start a container.
+ ```
+ docker run -it -rm -p 9696:9696 k8-test:v1
+ ```
+ Now let's make a call using our test script. This will make 100 calls to the service (but just prints 1 output)
+ ```
+ python3 predict-test.py -n 10
+ ```
+
  ## Create Kubernetes Cluster
  Depending on the cloud provider, there are different ways of doing it. Here is a GCP example.
 

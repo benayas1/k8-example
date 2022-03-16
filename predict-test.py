@@ -21,9 +21,10 @@ def main(n=1,
                 }]
 
   t = time.time()
-  for _ in range(n):
+  for i in range(n):
     result = requests.post(url=url,json=candidate).json()
-    print('The Model Prediction for placement :',result)
+    if i == 0:
+      print('The Model Prediction for placement :',result) # print just once
   duration = time.time() - t
   avg = duration / n
   print(f"Number of calls {n}. Average latency {avg}")

@@ -4,3 +4,4 @@ ruamel.yaml
 flask
 gunicorn
 fire
+requests
