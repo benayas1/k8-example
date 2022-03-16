@@ -50,10 +50,20 @@ The same can be obtained by using the GCP console.
 
 ## Create deployment files
 This files specify the deployment parameters (such as the image to deploy) and the service that is create (where do you expose your Flask app)
+
+First, let's update the deployment.yaml file with the correct image
+```
+python3 update.py "k8-test:v1" kube_config/deployment.yaml
+```
+
+Calling kubectl we load the configuration into the cluster
 ```
 kubectl create --filename kube_config/deployment.yaml
 kubectl create --filename kube_config/service.yaml
 ```
+
+## Create deployment files
+
 
  
  
