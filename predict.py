@@ -3,8 +3,8 @@ from flask import request,jsonify
 import pickle
 
 #loading the model 
-with open("project_one_model.pkl","rb") as f_in:
-    dv,model = pickle.load(f_in)
+with open("trained_model.pkl","rb") as f_in:
+    dv, model = pickle.load(f_in)
 
 app = Flask('Predict')
 

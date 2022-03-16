@@ -14,7 +14,6 @@ candidate = [{"gender": "M",
   "workex": 'Yes',
   }]
 
-
 #url = "http://0.0.0.0:9696/predict"
 
 url = "http://127.0.0.1:55395/predict"

@@ -11,12 +11,18 @@
  cd k8-example
  python3 -m venv env
  source env/bin/activate
- pip install -r requirements
+ pip install -r requirements.txt
  ```
  
  Run the provided training script
  ```
  python3 train.py
+ ```
+
+ ## Build the Docker image
+ Run the following command to build the image
+ ```
+ docker build .
  ```
  
  

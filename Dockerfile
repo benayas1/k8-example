@@ -1,14 +1,11 @@
 FROM python:3.8.12-slim
 
-RUN pip install pipenv
-
 WORKDIR /app
 
-COPY ["Pipfile", "Pipfile.lock", "./"]
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
 
-RUN pipenv install --deploy --system
-
-COPY ["*.py", "project_one_model.pkl", "./"] 
+COPY ["*.py", "trained_model.pkl", "./"] 
 
 EXPOSE 9696
 
