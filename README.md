@@ -22,7 +22,7 @@
  ## Build the Docker image
  Run the following command to build the image. This will create an image called k8-test and the tag v1
  ```
- docker build . -t k8-test:v1
+ docker build . -t us-central1-docker.pkg.dev/<your-project-here>/k8-test/example:v1
  ```
  Check the image creation was successfully. Your image should appear in the next command output
 ```
@@ -38,6 +38,11 @@ Now lets do a quick test to check that our prediction service works. Let's start
  ```
  python3 predict-test.py -n 10
  ```
+
+ Now let's push the image to the artifact registry
+```
+ docker push us-central1-docker.pkg.dev/<your-project-here>/k8-test/example:v1
+```
 
  ## Create Kubernetes Cluster
  Depending on the cloud provider, there are different ways of doing it. Here is a GCP example.
